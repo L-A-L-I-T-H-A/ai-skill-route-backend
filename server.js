@@ -38,7 +38,7 @@ const Student = mongoose.model("Student", studentSchema);
 app.post("/student",async (req, res) => {
     try{
         const response = await axios.post(
-            "http://127.0.0.1:5000/predict",
+            "https://your-flask-api.onrender.com/predict",
             req.body
         );
 
