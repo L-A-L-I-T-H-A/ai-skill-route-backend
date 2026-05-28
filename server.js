@@ -31,10 +31,10 @@ const studentSchema = new mongoose.Schema({
 // create model ( save the data into mongodb)
 const Student = mongoose.model("Student", studentSchema);
 
-app.post("/student",async (req, res) => {
+app.post("/predict",async (req, res) => {
     try{
         const response = await axios.post(
-            "/predict",
+            "https://ai-skill-route-backend-2.onrender.com/predict",
             req.body
         );
 
