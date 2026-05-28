@@ -1,8 +1,10 @@
 #import the libraries
 from flask import Flask,request,jsonify
 import pickle
+from flask_cors import CORS
 # create flask application
 app = Flask(__name__)
+CORS(app)
 #load the training model
 linear_model = pickle.load(open("linear.pkl","rb"))
 logistic_model = pickle.load(open("logistic.pkl","rb"))
@@ -10,7 +12,7 @@ svm_model = pickle.load(open("svm.pkl","rb"))
 kMeans_model = pickle.load(open("kmeans.pkl","rb"))
 
 # create the api route
-@app.route('/predict', methods=['POST'])
+@app.route('https://ai-skill-route-backend-4.onrender.com/predict', methods=['POST'])
 def predict():
     data = request.json
 
