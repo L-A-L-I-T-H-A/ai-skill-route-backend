@@ -12,7 +12,10 @@ svm_model = pickle.load(open("svm.pkl","rb"))
 kMeans_model = pickle.load(open("kmeans.pkl","rb"))
 
 # create the api route
-@app.route('https://ai-skill-route-backend-4.onrender.com/predict', methods=['POST'])
+@app.route('/')
+def home():
+    return "AI Skill Route Backend Running"
+@app.route('/predict', methods=['POST'])
 def predict():
     data = request.json
 
