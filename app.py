@@ -7,7 +7,7 @@ app = Flask(__name__)
 linear_model = pickle.load(open("linear.pkl","rb"))
 logistic_model = pickle.load(open("logistic.pkl","rb"))
 svm_model = pickle.load(open("svm.pkl","rb"))
-kMeans_model = pickle.load(open("kMeans.pkl","rb"))
+kMeans_model = pickle.load(open("kmeans.pkl","rb"))
 
 # create the api route
 @app.route('/predict', methods=['POST'])

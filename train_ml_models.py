@@ -71,6 +71,6 @@ pickle.dump(logistic_model, open("logistic.pkl", "wb"))
 
 pickle.dump(svm_model, open("svm.pkl", "wb"))
 
-pickle.dump(cluster, open("kMeans.pkl", "wb"))
+pickle.dump(cluster, open("kmeans.pkl", "wb"))
 
 print("Models are saved successfully")
