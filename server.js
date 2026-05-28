@@ -5,11 +5,7 @@ const mongoose = require("mongoose");
 
 const app = express();
 
-app.use(cors({
-    origin: "https://ai-skill-route-2d2e56.netlify.app",
-    methods: ["GET", "POST"],
-    credentials: true
-}));
+app.use(cors());
 app.use(express.json());
 // connecting the Nodejs to Local Mongodb
 mongoose.connect("mongodb://127.0.0.1:27017/careerguidance")
@@ -38,7 +34,7 @@ const Student = mongoose.model("Student", studentSchema);
 app.post("/student",async (req, res) => {
     try{
         const response = await axios.post(
-            "https://ai-skill-route-flask.onrender.com/predict",
+            "http://127.0.0.1:5000/predict",
             req.body
         );
 
